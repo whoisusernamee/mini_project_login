@@ -24,6 +24,15 @@ namespace WebLogin
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
         /// txtsearch control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,13 @@ namespace WebLogin
         protected global::System.Web.UI.WebControls.TextBox txtsearch;
 
         /// <summary>
-        /// btn_search control.
+        /// btnsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_search;
+        protected global::System.Web.UI.WebControls.Button btnsearch;
 
         /// <summary>
         /// btnlogout control.
@@ -51,12 +60,12 @@ namespace WebLogin
         protected global::System.Web.UI.WebControls.Button btnlogout;
 
         /// <summary>
-        /// GridViewStock control.
+        /// DataList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewStock;
+        protected global::System.Web.UI.WebControls.DataList DataList1;
     }
 }

@@ -18,17 +18,31 @@
             .form-control {
                 max-width: 250px; /* ปรับความยาวตามที่คุณต้องการ */
             }
+            .auto-style1 {
+                justify-content: center!important;
+                width: 1258px;
+            }
+            .auto-style2 {
+                width: 1061px;
+            }
         </style>
 
-        <div id="head" class="text-center d-flex gap-5">
-            <p></p>
-            <h3>
 
-                <asp:Label ID="Label1" runat="server" Text="Stock Website"></asp:Label>
-            </h3>
-            <p></p>
-            <asp:Button ID="btnlogout" runat="server" Text="Logout" CssClass="form-control btn btn-danger" OnClick="btnlogout_Click" Width="77px" />
-        </div>
+        <p></p>
+        <table class="auto-style1" style="width: 100%">
+            <tr>
+                <td colspan="2" align="center" class="auto-style2">
+                    <h3>
+                        <asp:Label ID="Label1" runat="server" Text="Stock Website"></asp:Label></h3>
+                </td>
+                <td align="right">
+                    <asp:Button ID="btnlogout" runat="server" Text="Logout" CssClass="form-control btn btn-danger" OnClick="btnlogout_Click" Width="77px" /></td>
+            </tr>
+        </table>
+
+        <p></p>
+
+
 
 
         <div>

@@ -15,13 +15,35 @@ namespace WebLogin
 
         }
 
-        protected void btnlogin_Click(object sender, EventArgs e)
+
+        private bool CheckUser(string username, string password)
+        {
+            return username == "tc" && password == "tc";
+        }
+        private bool CheckUser1(string username1, string password1)
+        {
+            return username1 == "pc" && password1 == "pc";
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox1.Checked)
+            {
+                txtpassword.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+            {
+                txtpassword.TextMode = TextBoxMode.Password;
+            }
+        }
+
+        protected void btnlogin_Click1(object sender, EventArgs e)
         {
             string username = txtuser.Text;
-            string password = txtpass.Text;
+            string password = txtpassword.Text;
 
             string username1 = txtuser.Text;
-            string password1 = txtpass.Text;
+            string password1 = txtpassword.Text;
 
             if (CheckUser(username, password))
             {
@@ -46,27 +68,6 @@ namespace WebLogin
             {
                 alerts.InnerText = "Error Wrong user or pass";
 
-            }
-        }
-
-        private bool CheckUser(string username, string password)
-        {
-            return username == "tc" && password == "tc";
-        }
-        private bool CheckUser1(string username1, string password1)
-        {
-            return username1 == "pc" && password1 == "pc";
-        }
-
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckBox1.Checked)
-            {
-                txtpass.TextMode = TextBoxMode.SingleLine;
-            }
-            else
-            {
-                txtpass.TextMode = TextBoxMode.Password;
             }
         }
     }

@@ -33,13 +33,13 @@ namespace WebLogin
         protected global::System.Web.UI.WebControls.TextBox txtuser;
 
         /// <summary>
-        /// txtpass control.
+        /// txtpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpass;
+        protected global::System.Web.UI.WebControls.TextBox txtpassword;
 
         /// <summary>
         /// CheckBox1 control.

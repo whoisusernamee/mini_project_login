@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,33 +15,69 @@ namespace WebLogin
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-            BindGridViewData();
-
+            BindDatalist();
         }
 
-        private void BindGridViewData()
+        private void BindDatalist()
         {
             string connectionString = "Server=dkttc.ac.th;Database=dbtc;User=tc;Password=tc;";
 
+
+
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM dbtc.ProductStore", con))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT *  FROM dbtc.ProductStore", con))
                 {
                     con.Open();
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        GridViewStock.DataSource = reader;
-                        GridViewStock.DataBind();
+
+
+                        DataList1.DataSource = reader;
+                        DataList1.DataBind();
                     }
                 }
             }
+
+
         }
+
+        
 
         protected void btnlogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnsearch_Click(object sender, EventArgs e)
+
+        {
+            string connectionString = "Server=dkttc.ac.th;Database=dbtc;User=tc;Password=tc;";
+
+
+
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT *  FROM dbtc.ProductStore", con))
+                {
+                    con.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        SqlDataAdapter sda = new SqlDataAdapter("Select * from ProductStore where (Product like '%"+txtsearch.Text+"%')",connectionString);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        DataList1.DataSourceID = null;
+                        DataList1.DataSource = dt;
+                        DataList1.DataBind();
+                        
+                      
+                    }
+                }
+            }
+            
         }
     }
 }
